@@ -1,27 +1,23 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bem vindo ao ScreenMatch");
-        System.out.println("Filme: Top Gun: Maverick");
-
+        System.out.println("Bem vindo ao ScreenWatch");
         int anoDeLancamento = 2022;
-        //Validação para informar se está na assinatura ou não o filme
-        boolean incluidoNoPlano = true;
-        double notaDoFilme = 8.1;
-        // Média calculada do filme
         double media = (9.8 + 6.3 + 8.0) / 3;
-        System.out.println("Nota do filme " + media);
-        String sinopse;
-        sinopse = """
-                Filme de aventura
-                Estrelado por Tom Cruise
-                Ano de Lançamento: """ + anoDeLancamento;
+        String sinopse = """
+                         Filme: Top Gun: Maverick
+                         Estrelado por Tom Cruise
+                         Muito Bom!
+                         Ano de Lançamento: 
+                         """ +anoDeLancamento;
         System.out.println(sinopse);
-
+        int classificacao = (int) (media/2);
+        System.out.println(classificacao);
 
 
     }
 }
-
 
 
 
