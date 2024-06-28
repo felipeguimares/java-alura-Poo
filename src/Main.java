@@ -1,21 +1,50 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bem vindo ao ScreenWatch");
-        int anoDeLancamento = 2022;
-        double media = (9.8 + 6.3 + 8.0) / 3;
-        String sinopse = """
-                         Filme: Top Gun: Maverick
-                         Estrelado por Tom Cruise
-                         Muito Bom!
-                         Ano de Lançamento: 
-                         """ +anoDeLancamento;
-        System.out.println(sinopse);
-        int classificacao = (int) (media/2);
-        System.out.println(classificacao);
+        Scanner leitor = new Scanner(System.in);
+        double saldoInicial = 2500.00;
+        double valorRecebido = 0;
+        double valorTransferido = 0;
+        int operacoes = 0;
+        System.out.println("*******************************");
+        System.out.println("Dados inciais do cliente");
+        System.out.println("");
+        System.out.println("Nome: Felipe Guimarães");
+        System.out.println("Tipo de Conta: Corrente");
+        System.out.println(String.format("Saldo Inicial : %.2f", saldoInicial));
+        System.out.println("*******************************");
+        System.out.println("Operações");
+        System.out.println("");
+        System.out.println("1 - Consultar saldos");
+        System.out.println("2 - Receber Valor");
+        System.out.println("3 - Transferir Valor");
+        System.out.println("4 - Sair");
+        System.out.println("");
 
-
+        while (operacoes == 0) {
+            System.out.println("Digite a opção desejada");
+            operacoes = leitor.nextInt();
+            switch (operacoes) {
+                case 1:
+                    System.out.println(String.format("Seu saldo é %.2f", saldoInicial));
+                    operacoes = 0;
+                case 2:
+                    System.out.println("Qual o valor recebido?");
+                    valorRecebido = leitor.nextDouble();
+                    saldoInicial += valorRecebido;
+                    System.out.println(String.format("Saldo Atualizado : %.2f", saldoInicial));
+                    break;
+                case 3:
+                    System.out.println("Qual o valor que deseja transferir: ");
+                    valorTransferido = leitor.nextDouble();
+                    saldoInicial -= valorTransferido;
+                    System.out.println(String.format("Saldo atualizado: %.2f", saldoInicial));
+                    break;
+                case 4:
+                    System.out.println("Até mais!");
+                    break;
+            }
+        }
     }
 }
 
